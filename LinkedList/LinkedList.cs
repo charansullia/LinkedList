@@ -39,14 +39,21 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
-        internal Node RemoveFirstNode()
+        internal Node RemovaLastNode()
         {
-            if (this.head == null)
+            if (head == null)
                 return null;
-            this.head = this.head.next;
-            Console.WriteLine("{0} Removed from LinkedList");
-            return this.head;
+            if (head.next == null)
+                return null;
+            Node newNode = head;
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            newNode.next = null;
+            Console.WriteLine("{0} Removed LatNode From LinkedList");
+            return head;
         }
-       
+
     }
 }
