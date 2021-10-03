@@ -12,7 +12,8 @@ namespace LinkedList
             list.add(70);
             // list.InsertAtParticularPosition(2,30);
             // list.RemoveFirstNode();
-            list.RemovaLastNode();
+            // list.RemovaLastNode();
+            list.Search(30);
             list.Display();
         }
     }

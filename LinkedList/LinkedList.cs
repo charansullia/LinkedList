@@ -10,50 +10,49 @@ namespace LinkedList
         internal void add(int data)
         {
             Node node = new Node(data);
-            if(this.head==null)
+            if (this.head == null)
             {
                 this.head = node;
             }
             else
             {
                 Node temp = head;
-                while (temp.next!=null)
+                while (temp.next != null)
                 {
-                   temp= temp.next;
+                    temp = temp.next;
                 }
-                   temp.next = node;
+                temp.next = node;
             }
-            Console.WriteLine("{0} inserted to LinkedList",node.data);
+            Console.WriteLine("{0} inserted to LinkedList", node.data);
         }
         internal void Display()
         {
             Node temp = this.head;
-            if(temp==null)
+            if (temp == null)
             {
                 Console.WriteLine("LinkedList is empty");
                 return;
             }
-            while(temp!=null)
+            while (temp != null)
             {
-                Console.WriteLine(temp.data+" ");
+                Console.WriteLine(temp.data + " ");
                 temp = temp.next;
             }
         }
-        internal Node RemovaLastNode()
+        internal Node Search(int value)
         {
-            if (head == null)
-                return null;
-            if (head.next == null)
-                return null;
-            Node newNode = head;
-            while (newNode.next.next != null)
+            Node temp = this.head;
+            while (temp != null)
             {
-                newNode = newNode.next;
+                if (temp.data == value)
+                {
+                    Console.WriteLine("your element found");
+                    return temp;
+                }
+                temp = temp.next;
             }
-            newNode.next = null;
-            Console.WriteLine("{0} Removed LatNode From LinkedList");
-            return head;
-        }
+            return null;
 
+        }
     }
 }
