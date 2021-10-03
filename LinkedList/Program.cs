@@ -7,10 +7,11 @@ namespace LinkedList
         static void Main(string[] args)
         {
             LinkedList list = new LinkedList();
-         //   list.add(30);
             list.add(56);
+            list.add(30);
             list.add(70);
-            list.InsertAtParticularPosition(2,30);
+            // list.InsertAtParticularPosition(2,30);
+            list.RemoveFirstNode();
             list.Display();
         }
     }
